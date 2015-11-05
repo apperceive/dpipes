@@ -25,7 +25,7 @@ function mss_array_get_safe($data, $keys) {
   // TODO: consider: recast back to object?
   $val = (array) $data;
   foreach ($keys as $key) {
-    if (array_key_exists($key, $val) 
+    if (array_key_exists($key, $val)) 
       $val = $val[$key];  // TODO: handle object? cast?
     else
       return isset($hasret) ? $ret : $data;  // CONSIDER: return last valid data?
