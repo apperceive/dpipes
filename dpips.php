@@ -1,3 +1,13 @@
+<?php 
+
+function mss_call_drupal($functionname, $params, $keys) {
+  // TODO: check for valid call and return
+  // TODO: validate function name and params
+  $data = call_user_func($functionname, $params);
+  $retval = mss_array_get_safe($data, $keys);
+  return drupal_json_encode($retval);
+}
+
 
 // return value of array (or object) safely
 // return last valid value or $ret if supplied
